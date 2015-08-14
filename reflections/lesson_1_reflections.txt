@@ -1,25 +1,46 @@
 Opened this file just by using command lines...
 
-Some short-cuts learned:
-pwd #	print working directory
-ls #	list of files in directory
-cd #	change directory
-cd~ #	change directory to home directory
+##### Command Line #######
+pwd		print working directory
+ls 		list of files in directory
+ls -a 	list of files in directory with hidden files
+cd 		change directory
+cd~ 	change directory to home directory
 
-git diff ID1 ID2 # difference of two commits
-git init # initialize repository
-git status # status of repository
-git checkout commitID # checkout commit
-git log # list of commits
-git reset filename # remove file from being commited
-git add filename # adds file to staging area
+###### GIT #######
+git init 					initialize repository
+
+git diff ID1 ID2 	 		difference of two commits
+git diff					changes between working directory and staging area
+git diff --staged			changes between staging area and last commit
+
+git status					status of repository
+
+git checkout commitID 		checkout commit
+git checkout master			checkout HEAD
+git checkout [branchname]	checkout to branch branchname
+
+git log 					list of commits
+
+git reset filename # remove file from being commited (bzw. from staging area)
+
+git add filename  			adds file to staging area
+git add .					add all files to staging area
+
 git commit -m 'your message here' # commit with commit name
+
+git branch 					show branches
+git branch [branch name] 	create branch with branch name
+
+
+
+git log --graph --oneline master coins #
 
 to compare two files # on Win FC # on gitBash diff
 
 How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
 - you can always get to an working version of your code
-- it's a lot more convinient if the saves are aotomatically made
+- it's a lot more convinient if the saves are automatically made
 - the versions are shown in a line and not as name1, name2, name3...
 
 
@@ -33,7 +54,8 @@ GETTING COLORED OUTPUT
 To get colored diff output, run git config --global color.ui auto
 
 USING GIT LOG AND GIT DIFF
-As a reminder, running git log will show a list of the recent commits with information about them, including commit IDs. Running git diff followed by two commit IDs will compare the two versions of the code in those commits
+As a reminder, running git log will show a list of the recent commits with information about them, including commit IDs. Running git diff followed by two commit IDs will compare the two versions 
+of the code in those commits
 
  SEE STATISTICS MADE TO A COMMIT
 git log --stat
@@ -42,10 +64,10 @@ git log --stat
 FORMAT OF GIT CHECKOUT
 The command Caroline types to checkout the "Revert controls" commit is git checkout b0678b161fcf74467ed3a63110557e3d6229cfa6.
 
-ls -a
-
 GIT REPOSITORIES AND DIRECTORIES
-Each Git repository is tied to a specific directory - the directory where you ran git init. Only files from that directory (and subdirectories inside that directory) will be contained in that repository, and you can have different repositories in different directories.
+Each Git repository is tied to a specific directory - the directory where you ran git init. Only files from that directory (and subdirectories inside that directory) will be contained in that repository,
+and you can have different repositories in different directories.
 
-If you accidentally add a file to the staging area, you can remove it using git reset. For example, if you accidentally add lesson_2_reflections.txt, but don’t want it to be committed yet, run git reset lesson_2_reflections.txt and the file will be removed from the staging area, but it will still be in your working directory.
+If you accidentally add a file to the staging area, you can remove it using git reset. For example, if you accidentally add lesson_2_reflections.txt, but don’t want it to be committed yet,
+run git reset lesson_2_reflections.txt and the file will be removed from the staging area, but it will still be in your working directory.
 
